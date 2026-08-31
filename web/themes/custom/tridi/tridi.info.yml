@@ -1,0 +1,15 @@
+name: tridicapas
+type: theme
+base theme: claro
+description: A flexible theme with a responsive, mobile-first layout.
+package: Custom
+core_version_requirement: ^10 || ^11
+libraries:
+  - tridi/global
+regions:
+  header: 'Header'
+  page_top: 'Page top'
+  featured: 'Featured'
+  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  footer: 'Footer'
