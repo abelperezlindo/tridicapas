@@ -1,0 +1,22 @@
+uuid: fe24b71c-9c2c-4bbc-8ecc-7337b27a39c5
+langcode: en
+status: false
+dependencies:
+  theme:
+    - tridi
+_core:
+  default_config_hash: ydSxdq7R66I8UMC460rOzlfzvlUL4VRbdwc6z9DWaUI
+id: tridi_secondary_local_tasks
+theme: tridi
+region: header
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

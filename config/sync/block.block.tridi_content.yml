@@ -1,0 +1,22 @@
+uuid: 89588b06-587c-43fe-a605-bdde31199f12
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tridi
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: tridi_content
+theme: tridi
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

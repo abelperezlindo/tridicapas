@@ -1,0 +1,22 @@
+uuid: ae57be1b-add7-4d4d-8b75-f9bc4ca563fc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tridi
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: tridi_breadcrumbs
+theme: tridi
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

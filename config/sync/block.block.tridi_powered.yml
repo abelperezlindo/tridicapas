@@ -1,0 +1,22 @@
+uuid: f0a03972-8e9b-475f-83a2-97f7b2acec93
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - tridi
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: tridi_powered
+theme: tridi
+region: header
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }
