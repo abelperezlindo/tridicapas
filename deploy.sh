@@ -2,7 +2,7 @@
 
 set -e
 
-PROJECT_DIR="/home/usuario/mi-proyecto"
+PROJECT_DIR=$HOME"/domains/tridicapas.com"
 
 cd "$PROJECT_DIR"
 
