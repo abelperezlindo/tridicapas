@@ -898,4 +898,3 @@ if (getenv('IS_DDEV_PROJECT') == 'true' && file_exists(__DIR__ . '/settings.ddev
    include $app_root . '/' . $site_path . '/settings.local.php';
  }
 
- // desafd
