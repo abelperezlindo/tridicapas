@@ -1,3 +1,5 @@
+name: Deploy production
+
 on:
   push:
     branches:
@@ -8,11 +10,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Configure SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+          ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
       - name: Deploy
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            /home/usuario/mi-proyecto/deploy.sh
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          ssh \
+            -i ~/.ssh/deploy_key \
+            -p "$SSH_PORT" \
+            "$SSH_USER@$SSH_HOST" \
+            "/home/usuario/mi-proyecto/deploy.sh"
+
+      - name: Cleanup SSH
+        if: always()
+        run: |
+          rm -f ~/.ssh/deploy_key
