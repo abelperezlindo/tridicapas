@@ -1,6 +1,6 @@
-uuid: 1848203d-4c48-41b6-a28b-f3412ef6055f
+uuid: fe13afef-3895-4f96-bcac-9b42e8fdf894
 langcode: en
-status: false
+status: true
 dependencies:
   theme:
     - tridi
