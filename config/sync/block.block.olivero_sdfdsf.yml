@@ -1,0 +1,23 @@
+uuid: 3e6bb142-d4b6-43a3-97cb-075e10a20c22
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d653bc9a-2b6a-493f-9d0f-ae94687b9b3c'
+  module:
+    - block_content
+  theme:
+    - olivero
+id: olivero_sdfdsf
+theme: olivero
+region: hero
+weight: 0
+provider: null
+plugin: 'block_content:d653bc9a-2b6a-493f-9d0f-ae94687b9b3c'
+settings:
+  id: 'block_content:d653bc9a-2b6a-493f-9d0f-ae94687b9b3c'
+  label: ' sdf dsf '
+  label_display: visible
+  provider: block_content
+  view_mode: full
+visibility: {  }
