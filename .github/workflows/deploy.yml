@@ -27,6 +27,4 @@ jobs:
             -p "$SSH_PORT" \
             -o StrictHostKeyChecking=no \
             "$SSH_USER@$SSH_HOST" \
-            "pwd" \
-            "cd domains/tridicapas.com" \
-            ".deploy.sh"
+            "cd domains/tridicapas.com && bash .deploy.sh"
