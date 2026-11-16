@@ -45,7 +45,6 @@ drush-backups
 *.sql.gz
 *.zip
 *.mysql.gz
-config/sync/core.extension.yml
 
 
 phpcs.xml
