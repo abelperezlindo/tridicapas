@@ -6,13 +6,18 @@ PROJECT_DIR=$HOME"/domains/tridicapas.com"
 
 cd "$PROJECT_DIR"
 
-echo "==> Actualizando código"
+# Log ussing drupal logger: Pulling latest changes from git
+vendor/bin/drush php:eval "\Drupal::logger('Deploy.sh')->info('Pulling latest');"
 git pull origin main
 
-echo "==> Instalando dependencias"
+# Log ussing drupal logger: Installing composer dependencies
+vendor/bin/drush php:eval "\Drupal::logger('Deploy.sh')->info('Installing composer dependencies');"
 composer install --no-dev --optimize-autoloader
 
-echo "==> Ejecutando Drupal deploy"
+# Log ussing drupal logger: Running Drupal deploy
+vendor/bin/drush php:eval "\Drupal::logger('Deploy.sh')->info('Running Drupal deploy');"
 vendor/bin/drush deploy
 
-echo "==> Deploy finalizado correctamente"
+# Log ussing drupal logger: End
+vendor/bin/drush php:eval "\Drupal::logger('Deploy.sh')->info('Deploy finalizado correctamente');"
+
