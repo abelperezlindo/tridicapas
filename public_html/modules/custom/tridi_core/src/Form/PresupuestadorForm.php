@@ -8,7 +8,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Formulario para calcular el presupuesto de una impresión 3D.
+ * Form to calculate the budget for a 3D print.
  */
 final class PresupuestadorForm extends FormBase {
 
@@ -121,14 +121,14 @@ final class PresupuestadorForm extends FormBase {
   }
 
   /**
-   * Convierte los valores configurados en opciones de un select.
+   * Converts the configured values into select options.
    */
   private function buildOptions(array $items): array {
     return array_map(static fn(array $item): string => (string) $item['label'], $items);
   }
 
   /**
-   * Arma el desglose del presupuesto calculado.
+   * Builds the breakdown of the calculated budget.
    */
   private function buildResultado(array $r): array {
     $rows = [
@@ -169,7 +169,7 @@ final class PresupuestadorForm extends FormBase {
   }
 
   /**
-   * Formatea un importe.
+   * Formats a monetary amount.
    */
   private function money(float $amount): string {
     return '$ ' . number_format($amount, 2, ',', '.');

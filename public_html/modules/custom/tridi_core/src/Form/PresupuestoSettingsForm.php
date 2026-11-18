@@ -8,7 +8,7 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Configuración de los valores usados por el presupuestador.
+ * Settings for the values used by the budget calculator.
  */
 final class PresupuestoSettingsForm extends ConfigFormBase {
 
