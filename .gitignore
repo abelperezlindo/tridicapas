@@ -48,3 +48,6 @@ drush-backups
 
 
 phpcs.xml
+
+# Contraseñas de la protección Basic Auth (solo en el servidor).
+public_html/.htpasswd

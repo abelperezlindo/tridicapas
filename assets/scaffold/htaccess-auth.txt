@@ -1,0 +1,13 @@
+# ---------------------------------------------------------------------------
+# Protección Basic Auth mientras el sitio no es público.
+# Composer (drupal-scaffold) agrega este bloque al inicio de
+# public_html/.htaccess cada vez que lo regenera. Ver composer.json
+# (extra.drupal-scaffold.file-mapping).
+# El archivo de contraseñas vive solo en el servidor (no se versiona).
+# Quitar este archivo y la entrada de composer.json al publicar el sitio.
+# ---------------------------------------------------------------------------
+AuthType Basic
+AuthName "Restricted Access"
+AuthUserFile /home/u370937162/domains/tridicapas.com/public_html/.htpasswd
+Require valid-user
+
