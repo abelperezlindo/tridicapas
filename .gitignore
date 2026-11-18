@@ -51,3 +51,6 @@ phpcs.xml
 
 # Contraseñas de la protección Basic Auth (solo en el servidor).
 public_html/.htpasswd
+
+# Archivos privados de Drupal (fuera de public_html).
+/private/
