@@ -1,7 +1,7 @@
-tridi_core.presupuesto:
+tridi_core.quote:
   path: '/presupuesto'
   defaults:
-    _form: '\Drupal\tridi_core\Form\PresupuestadorForm'
+    _form: '\Drupal\tridi_core\Form\QuoteCalculatorForm'
     _title: 'Presupuestador'
   requirements:
     _permission: 'presupuestar'
@@ -9,10 +9,10 @@ tridi_core.presupuesto:
   options:
     no_cache: TRUE
 
-tridi_core.presupuesto_settings:
+tridi_core.quote_settings:
   path: '/admin/presupuesto'
   defaults:
-    _form: '\Drupal\tridi_core\Form\PresupuestoSettingsForm'
+    _form: '\Drupal\tridi_core\Form\QuoteSettingsForm'
     _title: 'Configuración del presupuestador'
   requirements:
     _permission: 'configurar presupuesto'
@@ -27,7 +27,7 @@ tridi_core.admin:
   requirements:
     _permission: 'presupuestar+configurar presupuesto'
 
-tridi_core.admin_presupuestos:
+tridi_core.admin_quotes:
   path: '/admin/tridi/presupuestos'
   defaults:
     _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'

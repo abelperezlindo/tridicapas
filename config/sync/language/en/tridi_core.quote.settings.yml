@@ -1,12 +1,12 @@
-complejidad:
-  facil:
+complexity:
+  easy:
     label: Fácil
-  medio:
+  medium:
     label: Medio
-  alto:
+  high:
     label: Alto
-ganancia:
-  individual:
+profit:
+  retail:
     label: Individual
-  mayorista:
+  wholesale:
     label: 'Por mayor'

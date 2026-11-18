@@ -6,26 +6,26 @@ tridi_core.admin:
   menu_name: admin
   weight: -11
 
-tridi_core.admin_presupuestos:
+tridi_core.admin_quotes:
   title: 'Presupuestos'
   description: 'Presupuestador de impresiones 3D y su configuración.'
-  route_name: tridi_core.admin_presupuestos
+  route_name: tridi_core.admin_quotes
   parent: tridi_core.admin
   menu_name: admin
   weight: 0
 
-tridi_core.presupuesto:
+tridi_core.quote:
   title: 'Presupuestar'
   description: 'Calcular el presupuesto de una impresión 3D.'
-  route_name: tridi_core.presupuesto
-  parent: tridi_core.admin_presupuestos
+  route_name: tridi_core.quote
+  parent: tridi_core.admin_quotes
   menu_name: admin
   weight: 0
 
-tridi_core.presupuesto_settings:
+tridi_core.quote_settings:
   title: 'Configurar'
   description: 'Multiplicadores de complejidad, ganancia y costos del presupuestador.'
-  route_name: tridi_core.presupuesto_settings
-  parent: tridi_core.admin_presupuestos
+  route_name: tridi_core.quote_settings
+  parent: tridi_core.admin_quotes
   menu_name: admin
   weight: 10

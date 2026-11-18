@@ -1,0 +1,18 @@
+hourly_cost: 0
+complexity:
+  easy:
+    label: 'Fácil'
+    multiplier: 1
+  medium:
+    label: 'Medio'
+    multiplier: 1.25
+  high:
+    label: 'Alto'
+    multiplier: 1.5
+profit:
+  retail:
+    label: 'Individual'
+    percentage: 100
+  wholesale:
+    label: 'Por mayor'
+    percentage: 50
