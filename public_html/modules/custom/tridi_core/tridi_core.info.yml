@@ -1,0 +1,6 @@
+name: 'Tridi Core'
+type: module
+description: 'Funcionalidad propia de Tridicapas: presupuestador de impresiones 3D.'
+package: Custom
+core_version_requirement: ^11
+configure: tridi_core.presupuesto_settings

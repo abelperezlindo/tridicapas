@@ -1,0 +1,33 @@
+tridi_core.presupuesto.settings:
+  type: config_object
+  label: 'Configuración del presupuestador'
+  mapping:
+    costo_hora:
+      type: float
+      label: 'Costo por hora de impresión'
+    complejidad:
+      type: sequence
+      label: 'Niveles de complejidad'
+      sequence:
+        type: mapping
+        label: 'Nivel de complejidad'
+        mapping:
+          label:
+            type: label
+            label: 'Etiqueta'
+          multiplicador:
+            type: float
+            label: 'Multiplicador'
+    ganancia:
+      type: sequence
+      label: 'Tipos de ganancia'
+      sequence:
+        type: mapping
+        label: 'Tipo de ganancia'
+        mapping:
+          label:
+            type: label
+            label: 'Etiqueta'
+          porcentaje:
+            type: float
+            label: 'Porcentaje de ganancia'

@@ -1,0 +1,8 @@
+presupuestar:
+  title: 'Presupuestar'
+  description: 'Usar el presupuestador de impresiones 3D.'
+
+configurar presupuesto:
+  title: 'Configurar presupuesto'
+  description: 'Configurar los multiplicadores de complejidad, ganancia y costos del presupuestador.'
+  restrict access: true

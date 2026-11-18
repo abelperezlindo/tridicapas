@@ -1,0 +1,31 @@
+tridi_core.admin:
+  title: 'Tridi'
+  description: 'Herramientas propias de Tridicapas.'
+  route_name: tridi_core.admin
+  parent: system.admin
+  menu_name: admin
+  weight: -11
+
+tridi_core.admin_presupuestos:
+  title: 'Presupuestos'
+  description: 'Presupuestador de impresiones 3D y su configuración.'
+  route_name: tridi_core.admin_presupuestos
+  parent: tridi_core.admin
+  menu_name: admin
+  weight: 0
+
+tridi_core.presupuesto:
+  title: 'Presupuestar'
+  description: 'Calcular el presupuesto de una impresión 3D.'
+  route_name: tridi_core.presupuesto
+  parent: tridi_core.admin_presupuestos
+  menu_name: admin
+  weight: 0
+
+tridi_core.presupuesto_settings:
+  title: 'Configurar'
+  description: 'Multiplicadores de complejidad, ganancia y costos del presupuestador.'
+  route_name: tridi_core.presupuesto_settings
+  parent: tridi_core.admin_presupuestos
+  menu_name: admin
+  weight: 10

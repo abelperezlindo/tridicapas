@@ -1,0 +1,36 @@
+tridi_core.presupuesto:
+  path: '/presupuesto'
+  defaults:
+    _form: '\Drupal\tridi_core\Form\PresupuestadorForm'
+    _title: 'Presupuestador'
+  requirements:
+    _permission: 'presupuestar'
+    _user_is_logged_in: 'TRUE'
+  options:
+    no_cache: TRUE
+
+tridi_core.presupuesto_settings:
+  path: '/admin/presupuesto'
+  defaults:
+    _form: '\Drupal\tridi_core\Form\PresupuestoSettingsForm'
+    _title: 'Configuración del presupuestador'
+  requirements:
+    _permission: 'configurar presupuesto'
+  options:
+    _admin_route: TRUE
+
+tridi_core.admin:
+  path: '/admin/tridi'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Tridi'
+  requirements:
+    _permission: 'presupuestar+configurar presupuesto'
+
+tridi_core.admin_presupuestos:
+  path: '/admin/tridi/presupuestos'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Presupuestos'
+  requirements:
+    _permission: 'presupuestar+configurar presupuesto'
