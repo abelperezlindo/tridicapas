@@ -1,0 +1,6 @@
+duration_input:
+  js:
+    js/duration-input.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
