@@ -1,5 +1,5 @@
 uuid: 93595348-a217-45e8-926f-3ec75f0d58da
-langcode: en
+langcode: es
 status: true
 dependencies:
   enforced:
@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: zyTJjisGAiNCmSVzU73UWGY2joBWA3QXvlcjDDIuWcs
 id: order_default
-label: Default
+label: 'Por defecto'
 targetEntityType: commerce_order
 plugin: infinite
 configuration:
