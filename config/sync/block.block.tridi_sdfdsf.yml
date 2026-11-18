@@ -1,0 +1,23 @@
+uuid: 4ceb941d-3e3f-478e-80db-9520ea822d60
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d653bc9a-2b6a-493f-9d0f-ae94687b9b3c'
+  module:
+    - block_content
+  theme:
+    - tridi
+id: tridi_sdfdsf
+theme: tridi
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:d653bc9a-2b6a-493f-9d0f-ae94687b9b3c'
+settings:
+  id: 'block_content:d653bc9a-2b6a-493f-9d0f-ae94687b9b3c'
+  label: ' Creditos'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,23 @@
+uuid: c1937b03-9b03-4f96-ae34-761d37b9333b
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:39d56872-d340-4f83-a11e-625d277f6b02'
+  module:
+    - block_content
+  theme:
+    - tridi
+id: tridi_tridiprimeracolumnafooter
+theme: tridi
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:39d56872-d340-4f83-a11e-625d277f6b02'
+settings:
+  id: 'block_content:39d56872-d340-4f83-a11e-625d277f6b02'
+  label: 'Tridi primera columna footer'
+  label_display: visible
+  provider: block_content
+  view_mode: full
+visibility: {  }
