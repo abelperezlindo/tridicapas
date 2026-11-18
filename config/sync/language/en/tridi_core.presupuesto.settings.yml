@@ -1,0 +1,12 @@
+complejidad:
+  facil:
+    label: Fácil
+  medio:
+    label: Medio
+  alto:
+    label: Alto
+ganancia:
+  individual:
+    label: Individual
+  mayorista:
+    label: 'Por mayor'
