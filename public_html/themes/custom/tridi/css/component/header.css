@@ -5,7 +5,7 @@
 
 .site-header {
   position: sticky;
-  top: var(--drupal-displace-offset-top, 0px);
+  top: var(--sticky-top, 0px);
   z-index: 50;
   background: rgba(255, 255, 255, .92);
   backdrop-filter: blur(10px);
