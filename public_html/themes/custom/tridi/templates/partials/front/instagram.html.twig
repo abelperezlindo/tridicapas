@@ -1,0 +1,33 @@
+{#
+  Portada · Instagram.
+  Los recuadros son placeholders de color. Reemplazar cada .insta__item por
+  un enlace con imagen del post, o por un bloque de feed de Instagram.
+#}
+{% set placeholders = [
+  ['#6d47c9', '#2b1a5a'],
+  ['#ffd23f', '#e8a000'],
+  ['#7bb89a', '#3b6a56'],
+  ['#2fc58f', '#0f7a57'],
+  ['#3a7bd8', '#12306b'],
+] %}
+<section class="insta">
+  <div class="container insta__inner">
+    <div class="insta__text">
+      <span class="eyebrow">{{ 'Seguinos en Instagram'|t }}</span>
+      <h2>
+        {{ 'Lo último en nuestro taller'|t }}
+        <svg class="insta__logo" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+      </h2>
+      <a href="{{ instagram_url }}" target="_blank" rel="noopener" class="btn btn--outline btn--sm">
+        {{ 'Ver más en Instagram'|t }}
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <ul class="insta__grid">
+      {% for colors in placeholders %}
+        <li class="insta__item" style="--c1:{{ colors[0] }};--c2:{{ colors[1] }}"></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,121 @@
+/**
+ * @file
+ * Botones. Las clases .btn del diseño y los botones de formularios de Drupal
+ * (.button, input[type=submit]) comparten el mismo aspecto.
+ */
+
+.btn,
+.button,
+input[type="submit"],
+input[type="button"],
+button.form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 30px;
+  font: 700 .95rem/1 var(--font);
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: transform .2s, background .2s, color .2s, box-shadow .2s, border-color .2s;
+}
+
+.btn:hover,
+.button:hover,
+input[type="submit"]:hover,
+button.form-submit:hover {
+  transform: translateY(-2px);
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Primario (rosa). Es también el estilo por defecto de los submit. */
+.btn--primary,
+.button--primary,
+input[type="submit"],
+button.form-submit {
+  background: var(--pink);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(238, 42, 86, .3);
+}
+
+.btn--primary:hover,
+.button--primary:hover,
+input[type="submit"]:hover,
+button.form-submit:hover {
+  background: var(--pink-dark);
+}
+
+/* Secundario de Drupal (p. ej. "Cancelar", "Eliminar"). */
+.button:not(.button--primary) {
+  background: transparent;
+  color: var(--pink);
+  border-color: #f4b3c1;
+  box-shadow: none;
+}
+
+.btn--outline {
+  border-color: #f4b3c1;
+  color: var(--pink);
+  background: transparent;
+  box-shadow: none;
+}
+
+.btn--outline:hover,
+.button:not(.button--primary):hover {
+  background: var(--pink);
+  color: #fff;
+  border-color: var(--pink);
+}
+
+.btn--outline-dark {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: transparent;
+  padding: 12px 26px;
+  font-size: .85rem;
+}
+
+.btn--outline-dark:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+.btn--white {
+  background: #fff;
+  color: var(--blue);
+  padding: 16px 34px;
+}
+
+.btn--sm {
+  padding: 11px 22px;
+  font-size: .85rem;
+}
+
+.btn--block {
+  width: 100%;
+  padding: 16px;
+}
+
+.button--danger {
+  color: #c4132f;
+  border-color: #f0b6c0;
+}
+
+.button[disabled],
+input[type="submit"][disabled] {
+  opacity: .5;
+  cursor: not-allowed;
+  transform: none;
+}

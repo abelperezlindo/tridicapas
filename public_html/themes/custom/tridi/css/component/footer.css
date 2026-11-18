@@ -1,0 +1,89 @@
+/**
+ * @file
+ * Footer azul. Cada bloque de la región "Footer" es una columna.
+ */
+
+.site-footer {
+  padding-top: 50px;
+  background: var(--blue);
+  color: #fff;
+}
+
+.site-footer a:not(.btn):hover {
+  text-decoration: underline;
+}
+
+/* La región se convierte en la grilla de columnas. */
+.site-footer .region--footer {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px;
+  align-items: start;
+}
+
+.site-footer .region--footer > .block {
+  font-size: .78rem;
+  line-height: 1.5;
+  color: #dbe2ff;
+}
+
+.site-footer .block__title {
+  margin-bottom: 14px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* Branding colocado en el footer: versión en blanco. */
+.site-footer .site-branding {
+  margin-bottom: 14px;
+  color: #fff;
+}
+
+.site-footer .site-branding__logo img {
+  filter: brightness(0) invert(1);
+}
+
+.site-footer .site-branding__slogan {
+  color: #dbe2ff;
+}
+
+/* Lista de contacto con iconos (para usar en bloques de texto). */
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+/* ---------- Franja inferior: créditos ---------- */
+.site-footer__bottom {
+  margin-top: 36px;
+  padding: 18px 24px;
+  text-align: center;
+  font-size: .72rem;
+  color: #b9c6ff;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+}
+
+.site-footer__bottom p {
+  margin: 0 0 .25em;
+}
+
+.site-footer__bottom a {
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .site-footer .region--footer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer .region--footer {
+    grid-template-columns: 1fr;
+  }
+}

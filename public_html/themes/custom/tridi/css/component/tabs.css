@@ -1,0 +1,50 @@
+/**
+ * @file
+ * Pestañas de tareas locales (Ver / Editar / Eliminar...) y acciones.
+ */
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.tabs a {
+  display: block;
+  padding: 8px 18px;
+  font-size: .8rem;
+  font-weight: 600;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  transition: background .2s, color .2s, border-color .2s;
+}
+
+.tabs a:hover {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+
+.tabs .is-active > a,
+.tabs a.is-active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.tabs--secondary a {
+  padding: 6px 14px;
+  font-size: .75rem;
+}
+
+.action-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}

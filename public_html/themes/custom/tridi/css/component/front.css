@@ -1,0 +1,503 @@
+/**
+ * @file
+ * Secciones de la portada: hero, nosotros, contacto, productos, Instagram.
+ * Se carga solo en la portada (librería tridi/front).
+ */
+
+/* ---------- Iconos redondos compartidos ---------- */
+.feature-icon,
+.round-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  border-radius: 50%;
+}
+
+.feature-icon svg,
+.round-icon svg,
+.insta__logo,
+.products__text .btn svg,
+.insta__text .btn svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.feature-icon {
+  width: 44px;
+  height: 44px;
+}
+
+.feature-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.feature-icon--pink { background: #fde3e9; color: var(--pink); }
+.feature-icon--blue { background: #dcefff; color: var(--sky); }
+.feature-icon--yellow { background: #fff0c4; color: #f6a800; }
+
+.round-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, .14);
+  color: #cdd8ff;
+}
+
+.round-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.round-icon--yellow {
+  color: var(--yellow);
+}
+
+.hero ul,
+.about ul,
+.contact ol,
+.products ul,
+.insta ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero p,
+.about p,
+.contact p,
+.products p {
+  margin: 0;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+  min-height: 640px;
+  padding-block: 40px;
+}
+
+.hero h1 {
+  margin: 0;
+}
+
+.hero .hero__lead {
+  margin-top: 28px;
+  font-size: 1rem;
+  color: #26262b;
+}
+
+.hero .hero__features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.hero__features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .75rem;
+  line-height: 1.3;
+  color: var(--muted);
+}
+
+.hero__features strong {
+  display: block;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.hero__art {
+  position: relative;
+  align-self: stretch;
+  min-height: 460px;
+}
+
+.hero__bg {
+  position: absolute;
+  top: -40px;
+}
+
+.hero__bg--yellow {
+  right: 25%;
+  width: 26%;
+  height: 70%;
+  background: var(--yellow);
+}
+
+.hero__bg--blue {
+  right: -60px;
+  width: 30%;
+  height: 70%;
+  background: #0a3fd0;
+}
+
+.hero__img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 560px;
+  margin-top: 30px;
+  object-fit: contain;
+}
+
+/* ---------- Nosotros ---------- */
+.about {
+  padding-block: 60px;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 24px 24px 0 0;
+}
+
+.about h2 {
+  margin: 0;
+}
+
+.about__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.about .about__lead {
+  margin: 20px 0 32px;
+  font-size: 1rem;
+  color: #e6ebff;
+}
+
+.about__list {
+  display: grid;
+  gap: 16px;
+}
+
+.about__list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: .9rem;
+  line-height: 1.35;
+}
+
+.about__media {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.about__blob {
+  aspect-ratio: 1.25;
+  overflow: hidden;
+  border-radius: 50% 45% 40% 55% / 60% 40% 60% 40%;
+  background: #eee;
+}
+
+.about__blob img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__quote {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 320px;
+  margin: 0;
+  padding: 22px 24px;
+  background: var(--green);
+  color: #fff;
+  font-size: .95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  border-radius: 20px 6px 20px 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+}
+
+.quote-mark {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: .6;
+}
+
+.quote-line {
+  display: block;
+  width: 36px;
+  height: 3px;
+  margin-top: 14px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* ---------- Contacto ---------- */
+.contact {
+  padding-block: 60px;
+  background: var(--cream);
+}
+
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.contact__text h2 {
+  margin-bottom: 18px;
+}
+
+.contact__text > p {
+  max-width: 340px;
+  font-size: .95rem;
+  color: var(--muted);
+}
+
+.contact .steps {
+  display: grid;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.steps li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: .85rem;
+  line-height: 1.3;
+  color: var(--muted);
+}
+
+.steps strong {
+  display: block;
+  color: var(--ink);
+}
+
+.contact-form {
+  max-width: none;
+}
+
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* ---------- Productos ---------- */
+.products {
+  padding-block: 50px;
+  background: var(--mint);
+}
+
+.products__inner {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.products__text h2 {
+  margin-bottom: 12px;
+  font-size: 1.6rem;
+}
+
+.products__text p {
+  max-width: 220px;
+  margin-bottom: 22px;
+  font-size: .8rem;
+  color: #3e4a47;
+}
+
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.card {
+  overflow: hidden;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .05);
+  transition: transform .25s, box-shadow .25s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+.card__img {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1.1;
+}
+
+.card__img img {
+  width: 70%;
+}
+
+.card__title {
+  display: block;
+  padding: 12px 8px 14px;
+  text-align: center;
+  font-size: .78rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.ph--lamp { background: linear-gradient(#f6efe6, #e9ddcd); }
+.ph--planter { background: linear-gradient(#f2f0ed, #e0dcd6); }
+.ph--toys { background: linear-gradient(#eef3f6, #dde7ee); }
+.ph--keys { background: linear-gradient(#f3f1ee, #e5e1db); }
+
+/* ---------- Instagram ---------- */
+.insta {
+  padding-block: 40px;
+  background: var(--cream);
+}
+
+.insta__inner {
+  display: grid;
+  grid-template-columns: 1fr 3.4fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.insta__text h2 {
+  margin-bottom: 18px;
+  font-size: 1.5rem;
+}
+
+.insta__logo {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  margin-left: 6px;
+  color: var(--pink);
+  vertical-align: -3px;
+}
+
+.insta__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.insta__item {
+  position: relative;
+  aspect-ratio: 1 / 1.15;
+  overflow: hidden;
+  border-radius: 10px;
+  background: radial-gradient(circle at 50% 35%, var(--c1), var(--c2));
+  transition: transform .25s;
+}
+
+.insta__item:hover {
+  transform: scale(1.04);
+}
+
+.insta__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.insta__item::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 255, 255, .85);
+  border-radius: 4px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .hero__inner {
+    min-height: 0;
+  }
+
+  .products__inner,
+  .insta__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .products__text p {
+    max-width: none;
+  }
+}
+
+@media (max-width: 820px) {
+  .hero__inner,
+  .about__inner,
+  .contact__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__art {
+    min-height: 380px;
+    order: -1;
+  }
+
+  .hero__bg--blue {
+    right: 0;
+  }
+
+  .about__media {
+    order: -1;
+  }
+
+  .about__quote {
+    position: relative;
+    margin: -30px 0 0 auto;
+  }
+
+  .contact__text > p {
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .products__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .insta__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .insta__item:last-child {
+    grid-column: span 2;
+    aspect-ratio: 2 / 1;
+  }
+
+  .hero .hero__features {
+    gap: 16px;
+  }
+}

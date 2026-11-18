@@ -1,0 +1,25 @@
+/**
+ * @file
+ * Migas de pan.
+ */
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin-right: 6px;
+  color: #b5b5bb;
+}
+
+.breadcrumb a:hover {
+  color: var(--pink);
+}

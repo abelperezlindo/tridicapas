@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Front page of the Tridicapas store.
+ *
+ * Replaces the main area of page.html.twig with the landing sections. Each
+ * section lives in templates/partials/front/ so it can be edited (or later
+ * replaced by a block) independently.
+ *
+ * page.content is not printed on purpose: the default front page (/node)
+ * only lists promoted nodes. Status messages and local tasks are still shown
+ * through page.highlighted.
+ */
+#}
+{% extends 'page.html.twig' %}
+
+{% block main %}
+  {{ attach_library('tridi/front') }}
+  <main class="site-main site-main--front" role="main">
+    <a id="main-content" tabindex="-1"></a>
+
+    {% if page.highlighted %}
+      <div class="container">
+        {{ page.highlighted }}
+      </div>
+    {% endif %}
+
+    {% include '@tridi/partials/front/hero.html.twig' %}
+    {% include '@tridi/partials/front/about.html.twig' %}
+    {% include '@tridi/partials/front/contact.html.twig' %}
+    {% include '@tridi/partials/front/products.html.twig' %}
+    {% if instagram_url %}
+      {% include '@tridi/partials/front/instagram.html.twig' %}
+    {% endif %}
+  </main>
+{% endblock %}

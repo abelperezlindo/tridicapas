@@ -1,3 +1,9 @@
+# Tipografía del diseño (Plus Jakarta Sans).
+fonts:
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap': { type: external, minified: true }
+
 # Main theme library.
 global:
   js:
@@ -5,10 +11,14 @@ global:
   css:
     base:
       css/base/elements.css: {}
+    layout:
+      css/layout/layout.css: {}
     component:
       css/component/block.css: {}
       css/component/breadcrumb.css: {}
+      css/component/buttons.css: {}
       css/component/field.css: {}
+      css/component/footer.css: {}
       css/component/form.css: {}
       css/component/header.css: {}
       css/component/menu.css: {}
@@ -17,8 +27,17 @@ global:
       css/component/sidebar.css: {}
       css/component/table.css: {}
       css/component/tabs.css: {}
-      css/component/buttons.css: {}
-    layout:
-      css/layout/layout.css: {}
     theme:
       css/theme/print.css: { media: print }
+  dependencies:
+    - core/drupal
+    - core/once
+    - tridi/fonts
+
+# Secciones de la portada (se adjunta desde page--front.html.twig).
+front:
+  css:
+    component:
+      css/component/front.css: {}
+  dependencies:
+    - tridi/global

@@ -3,6 +3,6 @@ tridi.settings:
   type: theme_settings
   label: 'tridicapas settings'
   mapping:
-    example:
+    instagram_user:
       type: string
-      label: Example
+      label: 'Instagram user'

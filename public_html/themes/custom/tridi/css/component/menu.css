@@ -1,0 +1,68 @@
+/**
+ * @file
+ * Menús: principal (header) y menús en el footer.
+ */
+
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ---------- Menú principal (header) ---------- */
+.menu--main {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.menu--main .menu__link {
+  position: relative;
+  display: block;
+  padding: 6px 0;
+  transition: color .2s;
+}
+
+.menu--main .menu__link:hover,
+.menu--main .menu__link.is-active {
+  color: var(--pink);
+}
+
+/* Submenús: por ahora se muestran solo en móvil (lista anidada). */
+.menu--main .menu .menu {
+  display: none;
+}
+
+@media (max-width: 820px) {
+  .menu--main {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .menu--main .menu__link {
+    width: 100%;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .menu--main .menu .menu {
+    display: block;
+    padding-left: 16px;
+  }
+}
+
+/* ---------- Menús dentro del footer ---------- */
+.site-footer .menu__item {
+  margin-bottom: 8px;
+}
+
+.site-footer .menu__link {
+  font-size: .78rem;
+  color: #dbe2ff;
+}
+
+.site-footer .menu__link:hover {
+  color: #fff;
+  text-decoration: underline;
+}

@@ -8,22 +8,41 @@ declare(strict_types=1);
  */
 
 /**
- * Implements hook_preprocess_HOOK() for html.html.twig.
+ * Implements hook_page_attachments_alter().
  */
-function tridi_preprocess_html(array &$variables): void {
+function tridi_page_attachments_alter(array &$attachments): void {
+  // Preconnect a Google Fonts para cargar Plus Jakarta Sans más rápido.
+  $attachments['#attached']['html_head_link'][] = [
+    ['rel' => 'preconnect', 'href' => 'https://fonts.googleapis.com'],
+  ];
+  $attachments['#attached']['html_head_link'][] = [
+    ['rel' => 'preconnect', 'href' => 'https://fonts.gstatic.com', 'crossorigin' => 'anonymous'],
+  ];
+}
 
+/**
+ * Implements hook_preprocess_HOOK() for block--system-branding-block.html.twig.
+ */
+function tridi_preprocess_block__system_branding_block(array &$variables): void {
+  // Los archivos estáticos se sirven con caché de navegador muy larga, así que
+  // se agrega la fecha de modificación del logo como versión en la URL para
+  // que un logo nuevo se vea sin tener que vaciar la caché del navegador.
+  $logo = $variables['site_logo'] ?? '';
+  if ($logo === '' || str_contains($logo, '?')) {
+    return;
+  }
+  $path = DRUPAL_ROOT . '/' . ltrim(parse_url($logo, PHP_URL_PATH) ?? '', '/');
+  if (is_file($path)) {
+    $variables['site_logo'] = $logo . '?v=' . filemtime($path);
+  }
 }
 
 /**
  * Implements hook_preprocess_HOOK() for page.html.twig.
  */
 function tridi_preprocess_page(array &$variables): void {
-
-}
-
-/**
- * Implements hook_preprocess_HOOK() for node.html.twig.
- */
-function tridi_preprocess_node(array &$variables): void {
-
+  // Cuenta de Instagram configurada en Apariencia > tridicapas.
+  $instagram = trim((string) (theme_get_setting('instagram_user') ?? 'tridicapas'), " @/\t\n\r");
+  $variables['instagram_user'] = $instagram;
+  $variables['instagram_url'] = $instagram !== '' ? 'https://instagram.com/' . rawurlencode($instagram) : '';
 }

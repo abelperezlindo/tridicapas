@@ -1,0 +1,61 @@
+/**
+ * @file
+ * Estructura general de la página: contenedor, contenido con sidebar y
+ * footer siempre abajo.
+ */
+
+.container {
+  width: min(var(--container), 100% - 48px);
+  margin-inline: auto;
+}
+
+/* El footer queda abajo aunque el contenido sea corto. */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.site-main {
+  flex: 1;
+  padding-block: 40px 60px;
+}
+
+/* En la portada las secciones ocupan todo el ancho y llevan su propio padding. */
+.site-main--front {
+  padding-block: 0;
+}
+
+.site-main--front > .container {
+  padding-top: 24px;
+}
+
+/* Contenido principal + sidebar opcional. */
+.site-main__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 40px;
+}
+
+@media (min-width: 64rem) {
+  .site-main--with-sidebar .site-main__layout {
+    grid-template-columns: 16rem minmax(0, 1fr);
+  }
+
+  /* El sidebar (filtros/categorías) va a la izquierda en escritorio. */
+  .site-main--with-sidebar .site-main__sidebar {
+    grid-row: 1;
+    grid-column: 1;
+  }
+}
+
+.site-breadcrumb {
+  padding-top: 24px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+}

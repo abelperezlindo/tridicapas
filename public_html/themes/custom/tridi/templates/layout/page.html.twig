@@ -1,0 +1,104 @@
+{#
+/**
+ * @file
+ * Theme override to display a single page of the Tridicapas store.
+ *
+ * The doctype, html, head and body tags are in html.html.twig.
+ *
+ * Regions:
+ * - page.header: Site branding (logo, site name, slogan).
+ * - page.primary_menu: Main navigation / product categories.
+ * - page.secondary_menu: User account, cart and search.
+ * - page.featured: Full-width banners or sliders.
+ * - page.breadcrumb: Breadcrumb trail.
+ * - page.highlighted: Status messages, page title, local tasks and actions.
+ * - page.content: The main content of the current page.
+ * - page.sidebar: Catalog filters, categories, related content.
+ * - page.footer: Footer columns, one per block.
+ * - page.footer_bottom: Legal links and copyright.
+ *
+ * Extra variables (see tridi_preprocess_page()):
+ * - instagram_user: Instagram account from the theme settings, without "@".
+ * - instagram_url: Full URL to the Instagram profile.
+ *
+ * Twig blocks "main" can be overridden by more specific page templates
+ * (see page--front.html.twig).
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+<div class="page-wrapper">
+  <header class="site-header" role="banner">
+    <div class="site-header__inner container">
+      {{ page.header }}
+
+      {% if page.primary_menu or page.secondary_menu or instagram_url %}
+        <button class="nav-toggle" type="button" aria-label="{{ 'Abrir menú'|t }}" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div class="site-nav" id="site-nav">
+          {{ page.primary_menu }}
+
+          {% if page.secondary_menu or instagram_url %}
+            <div class="site-nav__secondary">
+              {{ page.secondary_menu }}
+              {% if instagram_url %}
+                <a href="{{ instagram_url }}" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                  {% include '@tridi/partials/icon-instagram.html.twig' %}
+                  {{ 'Escribinos'|t }}
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </header>
+
+  {% if page.featured %}
+    <div class="site-featured">
+      {{ page.featured }}
+    </div>
+  {% endif %}
+
+  {% block main %}
+    {% if page.breadcrumb %}
+      <div class="site-breadcrumb container">
+        {{ page.breadcrumb }}
+      </div>
+    {% endif %}
+
+    <main class="site-main container{{ page.sidebar ? ' site-main--with-sidebar' }}" role="main">
+      <a id="main-content" tabindex="-1"></a>
+
+      {{ page.highlighted }}
+
+      <div class="site-main__layout">
+        <div class="site-main__content">
+          {{ page.content }}
+        </div>
+
+        {% if page.sidebar %}
+          <aside class="site-main__sidebar" role="complementary">
+            {{ page.sidebar }}
+          </aside>
+        {% endif %}
+      </div>
+    </main>
+  {% endblock %}
+
+  <footer class="site-footer" role="contentinfo">
+    {% if page.footer %}
+      <div class="container">
+        {{ page.footer }}
+      </div>
+    {% endif %}
+
+    <div class="site-footer__bottom">
+      {{ page.footer_bottom }}
+      <p>{{ 'Diseñado y desarrollado por'|t }} <a href="https://www.abelperezlindo.dev" target="_blank" rel="noopener">Abel Perez Lindo</a></p>
+    </div>
+  </footer>
+</div>

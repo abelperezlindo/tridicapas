@@ -1,0 +1,38 @@
+{#
+  Portada · Productos.
+  Por ahora son categorías estáticas con ilustraciones. Más adelante se puede
+  reemplazar la grilla por una vista de productos de Commerce.
+#}
+{%
+  set categories = [
+    { title: 'Lámparas', image: 'lamp', class: 'ph--lamp' },
+    { title: 'Macetas<br>y decoración', image: 'planter', class: 'ph--planter' },
+    { title: 'Juguetes<br>y didácticos', image: 'toys', class: 'ph--toys' },
+    { title: 'Llaveros<br>personalizados', image: 'keys', class: 'ph--keys' },
+  ]
+%}
+<section class="products" id="productos">
+  <div class="container products__inner">
+    <div class="products__text">
+      <span class="eyebrow eyebrow--dark">{{ 'Productos'|t }}</span>
+      <h2>{{ 'Algunas ideas que ya hicimos'|t }}</h2>
+      <p>{{ 'Cada pieza es única, hecha a medida y con mucho detalle.'|t }}</p>
+      {# TODO: enlazar al listado de productos cuando exista. #}
+      <a href="#productos" class="btn btn--outline-dark">
+        {{ 'Ver más productos'|t }}
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <ul class="products__grid">
+      {% for category in categories %}
+        <li class="card">
+          <div class="card__img {{ category.class }}">
+            <img src="{{ base_path ~ directory }}/images/products/{{ category.image }}.svg" alt="" width="120" height="150" loading="lazy">
+          </div>
+          <span class="card__title">{{ category.title|raw }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

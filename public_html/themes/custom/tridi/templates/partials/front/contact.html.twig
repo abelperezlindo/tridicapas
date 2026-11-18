@@ -1,0 +1,65 @@
+{#
+  Portada · Cómo trabajamos / Contacto.
+
+  IMPORTANTE: el formulario es solo maqueta (no envía nada). Reemplazarlo por
+  un formulario real de Drupal (módulo Contact de core o Webform) antes de
+  publicar en producción.
+#}
+<section class="contact" id="como-trabajamos">
+  <div class="container contact__inner">
+    <div class="contact__text" id="contacto">
+      <span class="eyebrow">{{ 'Contanos tu idea'|t }}</span>
+      <h2>{{ 'Hablemos de'|t }} <span class="accent">{{ 'tu proyecto'|t }}</span></h2>
+      <p>
+        {{ 'Subí una imagen o boceto de tu idea, contanos qué necesitás y te respondemos a la brevedad con una propuesta.'|t }}
+      </p>
+      <ol class="steps">
+        <li>
+          <span class="feature-icon feature-icon--pink"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0-4 4m4-4 4 4M5 20h14"/></svg></span>
+          <span><strong>{{ 'Subí tu imagen'|t }}</strong>{{ 'o referencia'|t }}</span>
+        </li>
+        <li>
+          <span class="feature-icon feature-icon--blue"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4Z"/><path d="M9 10h6"/></svg></span>
+          <span><strong>{{ 'Contanos qué necesitás'|t }}</strong>{{ 'y para qué'|t }}</span>
+        </li>
+        <li>
+          <span class="feature-icon feature-icon--yellow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 3 10.5l7 2.5 2.5 7Z"/><path d="m10 13 4-4"/></svg></span>
+          <span><strong>{{ 'Te respondemos'|t }}</strong>{{ 'rápido por Instagram'|t }}</span>
+        </li>
+      </ol>
+    </div>
+
+    <form class="form-card contact-form" action="#" method="post" enctype="multipart/form-data">
+      <div class="contact-form__row">
+        <div class="form-item">
+          <label for="contact-nombre" class="form-required">{{ 'Nombre'|t }}</label>
+          <input type="text" id="contact-nombre" name="nombre" placeholder="{{ 'Tu nombre'|t }}" required>
+        </div>
+        <div class="form-item">
+          <label for="contact-dato" class="form-required">{{ 'Email o WhatsApp'|t }}</label>
+          <input type="text" id="contact-dato" name="contacto" placeholder="{{ 'Tu contacto'|t }}" required>
+        </div>
+      </div>
+
+      <div class="form-item">
+        <label for="contact-idea" class="form-required">{{ 'Contanos tu idea'|t }}</label>
+        <textarea id="contact-idea" name="idea" rows="4" placeholder="{{ 'Describí tu idea, medidas aproximadas, colores, materiales, etc.'|t }}" required></textarea>
+      </div>
+
+      <div class="form-item">
+        <span class="label">{{ 'Subí una imagen (opcional)'|t }}</span>
+        <label class="dropzone" for="contact-imagen" data-tridi-dropzone>
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1-.5-8 5.5 5.5 0 0 1 10.6-1A4.5 4.5 0 0 1 17 18M12 12v7m0-7-3 3m3-3 3 3"/></svg>
+          <span class="dropzone__text">{{ 'Arrastrá tu imagen acá o hacé clic para seleccionar'|t }}</span>
+          <small>JPG, PNG, WEBP · {{ 'Máx. 5MB'|t }}</small>
+        </label>
+        <input type="file" id="contact-imagen" name="imagen" accept=".jpg,.jpeg,.png,.webp" hidden>
+      </div>
+
+      <button type="submit" class="btn btn--primary btn--block">
+        {{ 'Enviar consulta'|t }}
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 3 10.5l7 2.5 2.5 7Z"/><path d="m10 13 4-4"/></svg>
+      </button>
+    </form>
+  </div>
+</section>

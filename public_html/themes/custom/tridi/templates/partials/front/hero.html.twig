@@ -1,0 +1,46 @@
+{# Portada · Hero. #}
+<section class="hero" id="inicio">
+  <div class="container hero__inner">
+    <div class="hero__text">
+      <h1>{{ 'Damos forma'|t }} <span class="accent">{{ 'a tus ideas'|t }}</span></h1>
+      <p class="hero__lead">
+        {{ 'Convertimos tus ideas en productos únicos'|t }}<br>
+        {{ 'con diseño, creatividad y tecnología.'|t }}<br>
+        {{ 'Piezas que inspiran, decoran y enseñan.'|t }}
+      </p>
+
+      <ul class="hero__features">
+        <li>
+          <span class="feature-icon feature-icon--pink">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3Z"/></svg>
+          </span>
+          <span><strong>{{ 'Ideas'|t }}</strong>{{ 'que cobran vida'|t }}</span>
+        </li>
+        <li>
+          <span class="feature-icon feature-icon--blue">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9 8-4.5M12 12 4 7.5M12 12v9"/></svg>
+          </span>
+          <span><strong>{{ 'Diseño'|t }}</strong>{{ 'personalizado'|t }}</span>
+        </li>
+        <li>
+          <span class="feature-icon feature-icon--yellow">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11Z" fill="currentColor"/></svg>
+          </span>
+          <span><strong>{{ 'Hecho con'|t }}</strong>{{ 'pasión'|t }}</span>
+        </li>
+      </ul>
+
+      <div class="hero__cta">
+        <a href="#contacto" class="btn btn--primary">{{ 'Contanos tu idea'|t }}</a>
+        <a href="#productos" class="btn btn--outline">{{ 'Ver productos'|t }}</a>
+      </div>
+    </div>
+
+    <div class="hero__art" aria-hidden="true">
+      <div class="hero__bg hero__bg--yellow"></div>
+      <div class="hero__bg hero__bg--blue"></div>
+      {# Reemplazar por una foto real (images/hero.webp) cuando esté disponible. #}
+      <img class="hero__img" src="{{ base_path ~ directory }}/images/hero.svg" alt="" width="560" height="520">
+    </div>
+  </div>
+</section>

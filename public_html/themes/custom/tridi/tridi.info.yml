@@ -1,15 +1,20 @@
 name: tridicapas
 type: theme
-base theme: claro
-description: A flexible theme with a responsive, mobile-first layout.
+base theme: false
+description: Tema público de la tienda online Tridicapas.
 package: Custom
 core_version_requirement: ^10 || ^11
+logo: logo.svg
 libraries:
   - tridi/global
 regions:
   header: 'Header'
-  page_top: 'Page top'
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
   featured: 'Featured'
   breadcrumb: 'Breadcrumb'
+  highlighted: 'Highlighted'
   content: 'Content'
+  sidebar: 'Sidebar'
   footer: 'Footer'
+  footer_bottom: 'Footer bottom'
