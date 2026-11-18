@@ -45,4 +45,24 @@ function tridi_preprocess_page(array &$variables): void {
   $instagram = trim((string) (theme_get_setting('instagram_user') ?? 'tridicapas'), " @/\t\n\r");
   $variables['instagram_user'] = $instagram;
   $variables['instagram_url'] = $instagram !== '' ? 'https://instagram.com/' . rawurlencode($instagram) : '';
+
+  // Formulario "Contanos tu idea" (webform "contacto") para la portada.
+  if (!empty($variables['is_front'])) {
+    $variables['contact_form'] = _tridi_webform_render('contacto');
+  }
+}
+
+/**
+ * Devuelve el render array de un webform, o un array vacío si no existe.
+ */
+function _tridi_webform_render(string $webform_id): array {
+  $entity_type_manager = \Drupal::entityTypeManager();
+  if (!$entity_type_manager->hasDefinition('webform')) {
+    return [];
+  }
+  $webform = $entity_type_manager->getStorage('webform')->load($webform_id);
+  if (!$webform || !$webform->access('submission_create')) {
+    return [];
+  }
+  return $entity_type_manager->getViewBuilder('webform')->view($webform);
 }

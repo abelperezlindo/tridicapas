@@ -292,14 +292,139 @@
   color: var(--ink);
 }
 
+/* Webform "contacto" dentro de la tarjeta blanca. */
 .contact-form {
   max-width: none;
 }
 
-.contact-form__row {
+.contact-form .form-item,
+.contact-form .webform-flexbox {
+  margin: 0 0 18px;
+}
+
+/* Nombre + Email/WhatsApp en dos columnas (webform_flexbox). */
+.contact-form .webform-flexbox {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
+}
+
+.contact-form .webform-flex--container {
+  margin: 0;
+}
+
+.contact-form .webform-flexbox .form-item {
+  margin: 0;
+}
+
+/* Campo de imagen con aspecto de zona de arrastre. */
+.contact-form .form-managed-file {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 20px;
+  text-align: center;
+  font-size: .78rem;
+  color: var(--muted);
+  background: #fff;
+  border: 1.5px dashed #cfcbc3;
+  border-radius: 10px;
+  transition: border-color .2s, background .2s;
+}
+
+.contact-form .form-managed-file:hover,
+.contact-form .form-managed-file:focus-within {
+  border-color: var(--pink);
+  background: #fff5f7;
+}
+
+.contact-form .webform-managed-file-placeholder {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+}
+
+.contact-form .webform-managed-file-placeholder::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a8a90' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 18a4 4 0 0 1-.5-8 5.5 5.5 0 0 1 10.6-1A4.5 4.5 0 0 1 17 18M12 12v7m0-7-3 3m3-3 3 3'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+.contact-form .form-managed-file .form-file {
+  max-width: 100%;
+  font: inherit;
+  color: var(--muted);
+}
+
+.contact-form .form-managed-file .form-file::file-selector-button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  font: 600 .78rem var(--font);
+  color: var(--pink);
+  background: transparent;
+  border: 1.5px solid #f4b3c1;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+
+/* Archivo ya subido: nombre + botón "Eliminar". */
+.contact-form .form-managed-file .file {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.contact-form .form-managed-file .button {
+  padding: 8px 18px;
+  font-size: .78rem;
+}
+
+.contact-form .description {
+  margin-top: 6px;
+  font-size: .7rem;
+  color: #a7a7ad;
+}
+
+/* Botón "Enviar consulta" a todo el ancho. */
+.contact-form .webform-actions {
+  margin: 0;
+}
+
+.contact-form .webform-actions .form-submit {
+  width: 100%;
+  padding: 16px;
+}
+
+/* Confirmación inline tras enviar. */
+.contact-form .webform-confirmation {
+  display: grid;
+  gap: 18px;
+  justify-items: start;
+}
+
+.contact-form .webform-confirmation__message {
+  padding: 16px 20px 16px 52px;
+  font-size: .95rem;
+  background: #f1fbf7 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235fc9a0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m8 12 3 3 5-6'/%3E%3C/svg%3E") no-repeat 18px 18px / 20px;
+  border-left: 5px solid var(--green);
+  border-radius: 12px;
+}
+
+.contact-form .webform-confirmation__back a {
+  display: inline-flex;
+  padding: 11px 22px;
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--pink);
+  border: 2px solid #f4b3c1;
+  border-radius: var(--radius-pill);
+  transition: background .2s, color .2s, border-color .2s;
+}
+
+.contact-form .webform-confirmation__back a:hover {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: #fff;
 }
 
 /* ---------- Productos ---------- */
@@ -480,7 +605,7 @@
 }
 
 @media (max-width: 600px) {
-  .contact-form__row {
+  .contact-form .webform-flexbox {
     grid-template-columns: 1fr;
   }
 

@@ -1,9 +1,9 @@
 {#
   Portada · Cómo trabajamos / Contacto.
 
-  IMPORTANTE: el formulario es solo maqueta (no envía nada). Reemplazarlo por
-  un formulario real de Drupal (módulo Contact de core o Webform) antes de
-  publicar en producción.
+  El formulario es el webform "contacto" (ver tridi_preprocess_page()). Se
+  administra en Estructura > Formularios; los emails se envían a la dirección
+  del sitio.
 #}
 <section class="contact" id="como-trabajamos">
   <div class="container contact__inner">
@@ -29,37 +29,10 @@
       </ol>
     </div>
 
-    <form class="form-card contact-form" action="#" method="post" enctype="multipart/form-data">
-      <div class="contact-form__row">
-        <div class="form-item">
-          <label for="contact-nombre" class="form-required">{{ 'Nombre'|t }}</label>
-          <input type="text" id="contact-nombre" name="nombre" placeholder="{{ 'Tu nombre'|t }}" required>
-        </div>
-        <div class="form-item">
-          <label for="contact-dato" class="form-required">{{ 'Email o WhatsApp'|t }}</label>
-          <input type="text" id="contact-dato" name="contacto" placeholder="{{ 'Tu contacto'|t }}" required>
-        </div>
+    {% if contact_form %}
+      <div class="form-card contact-form">
+        {{ contact_form }}
       </div>
-
-      <div class="form-item">
-        <label for="contact-idea" class="form-required">{{ 'Contanos tu idea'|t }}</label>
-        <textarea id="contact-idea" name="idea" rows="4" placeholder="{{ 'Describí tu idea, medidas aproximadas, colores, materiales, etc.'|t }}" required></textarea>
-      </div>
-
-      <div class="form-item">
-        <span class="label">{{ 'Subí una imagen (opcional)'|t }}</span>
-        <label class="dropzone" for="contact-imagen" data-tridi-dropzone>
-          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1-.5-8 5.5 5.5 0 0 1 10.6-1A4.5 4.5 0 0 1 17 18M12 12v7m0-7-3 3m3-3 3 3"/></svg>
-          <span class="dropzone__text">{{ 'Arrastrá tu imagen acá o hacé clic para seleccionar'|t }}</span>
-          <small>JPG, PNG, WEBP · {{ 'Máx. 5MB'|t }}</small>
-        </label>
-        <input type="file" id="contact-imagen" name="imagen" accept=".jpg,.jpeg,.png,.webp" hidden>
-      </div>
-
-      <button type="submit" class="btn btn--primary btn--block">
-        {{ 'Enviar consulta'|t }}
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 3 10.5l7 2.5 2.5 7Z"/><path d="m10 13 4-4"/></svg>
-      </button>
-    </form>
+    {% endif %}
   </div>
 </section>
