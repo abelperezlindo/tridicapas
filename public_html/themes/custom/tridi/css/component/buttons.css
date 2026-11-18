@@ -1,7 +1,7 @@
 /**
  * @file
- * Botones. Las clases .btn del diseño y los botones de formularios de Drupal
- * (.button, input[type=submit]) comparten el mismo aspecto.
+ * Buttons. The design's .btn classes and Drupal form buttons (.button,
+ * input[type=submit]) share the same look.
  */
 
 .btn,
@@ -40,7 +40,7 @@ button.form-submit:hover {
   stroke-linejoin: round;
 }
 
-/* Primario (rosa). Es también el estilo por defecto de los submit. */
+/* Primary (pink). Also the default style for submit buttons. */
 .btn--primary,
 .button--primary,
 input[type="submit"],
@@ -57,7 +57,7 @@ button.form-submit:hover {
   background: var(--pink-dark);
 }
 
-/* Secundario de Drupal (p. ej. "Cancelar", "Eliminar"). */
+/* Drupal secondary buttons (e.g. "Cancelar", "Eliminar"). */
 .button:not(.button--primary) {
   background: transparent;
   color: var(--pink);

@@ -1,6 +1,6 @@
 /**
  * @file
- * Variables, reset y estilos base de elementos HTML.
+ * Variables, reset and base styles for HTML elements.
  */
 
 :root {
@@ -25,21 +25,20 @@
   --font: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   /*
-   * Posición donde se pega el header sticky: debajo de la toolbar de Drupal
-   * (si está visible). --drupal-displace-offset-top suma todos los elementos
-   * con data-offset-top.
+   * Where the sticky header sticks: below the Drupal toolbar (when
+   * visible). --drupal-displace-offset-top adds up every element with
+   * data-offset-top.
    */
   --sticky-top: var(--drupal-displace-offset-top, 0px);
 
-  /* Alto del header sticky + toolbar, para que las anclas no queden tapadas. */
+  /* Sticky header + toolbar height, so anchors are not hidden behind them. */
   --header-offset: calc(90px + var(--sticky-top));
 }
 
 /*
- * Gin muestra en el front una barra secundaria ("Volver a la administración")
- * que también suma al offset pero se va con el scroll. Se descuenta su altura
- * para que el header quede pegado a la barra fija de administración sin dejar
- * un hueco.
+ * On the front end Gin shows a secondary bar ("Back to Administration") that
+ * also adds to the offset but scrolls away. Its height is subtracted so the
+ * header sticks right below the fixed admin toolbar without leaving a gap.
  */
 :root:has(.gin-secondary-toolbar--frontend) {
   --sticky-top: max(0px, calc(var(--drupal-displace-offset-top, 0px) - var(--gin-toolbar-secondary-height, 0px)));
@@ -121,7 +120,7 @@ h2 .accent {
   display: block;
 }
 
-/* Enlaces dentro de textos editados (body de nodos, bloques, etc.). */
+/* Links inside formatted text (node body, blocks, etc.). */
 .text-formatted a,
 .field--type-text-with-summary a {
   color: var(--pink);
@@ -137,7 +136,7 @@ textarea:focus-visible {
   outline-offset: 3px;
 }
 
-/* Etiqueta pequeña sobre los títulos de sección. */
+/* Small label above section titles. */
 .eyebrow {
   display: inline-block;
   margin-bottom: 14px;
@@ -156,7 +155,7 @@ textarea:focus-visible {
   color: var(--ink);
 }
 
-/* Iconos SVG de trazo (Instagram, flechas, etc.). */
+/* Stroke SVG icons (Instagram, arrows, etc.). */
 .icon {
   width: 18px;
   height: 18px;
@@ -172,7 +171,7 @@ svg.icon,
   stroke-linejoin: round;
 }
 
-/* Enlace "saltar al contenido" visible al recibir foco. */
+/* "Skip to content" link, visible on focus. */
 .skip-link:focus {
   position: fixed;
   top: 8px;

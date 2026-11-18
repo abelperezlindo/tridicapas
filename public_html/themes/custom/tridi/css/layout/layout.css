@@ -1,7 +1,7 @@
 /**
  * @file
- * Estructura general de la página: contenedor, contenido con sidebar y
- * footer siempre abajo.
+ * General page structure: container, content with sidebar and a footer
+ * that always stays at the bottom.
  */
 
 .container {
@@ -9,7 +9,7 @@
   margin-inline: auto;
 }
 
-/* El footer queda abajo aunque el contenido sea corto. */
+/* Keep the footer at the bottom even when the content is short. */
 .page-wrapper {
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@
   padding-block: 40px 60px;
 }
 
-/* En la portada las secciones ocupan todo el ancho y llevan su propio padding. */
+/* On the front page sections span the full width and have their own padding. */
 .site-main--front {
   padding-block: 0;
 }
@@ -31,7 +31,7 @@
   padding-top: 24px;
 }
 
-/* Contenido principal + sidebar opcional. */
+/* Main content + optional sidebar. */
 .site-main__layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -43,7 +43,7 @@
     grid-template-columns: 16rem minmax(0, 1fr);
   }
 
-  /* El sidebar (filtros/categorías) va a la izquierda en escritorio. */
+  /* The sidebar (filters/categories) goes on the left on desktop. */
   .site-main--with-sidebar .site-main__sidebar {
     grid-row: 1;
     grid-column: 1;
@@ -52,6 +52,16 @@
 
 .site-breadcrumb {
   padding-top: 24px;
+}
+
+/* Page title region (every page except the front page). */
+.site-title {
+  margin-bottom: 28px;
+}
+
+.site-title h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
 }
 
 @media (max-width: 600px) {

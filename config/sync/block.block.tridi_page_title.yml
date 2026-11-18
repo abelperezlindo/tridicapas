@@ -1,6 +1,6 @@
 uuid: db5e4798-a322-4a99-8a09-b2ade28419f7
 langcode: en
-status: false
+status: true
 dependencies:
   theme:
     - tridi
@@ -8,8 +8,8 @@ _core:
   default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
 id: tridi_page_title
 theme: tridi
-region: header
-weight: -5
+region: page_title
+weight: 0
 provider: null
 plugin: page_title_block
 settings:

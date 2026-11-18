@@ -11,7 +11,9 @@
  * - page.secondary_menu: User account, cart and search.
  * - page.featured: Full-width banners or sliders.
  * - page.breadcrumb: Breadcrumb trail.
- * - page.highlighted: Status messages, page title, local tasks and actions.
+ * - page.page_title: Page title. Not printed on the front page, whose
+ *   template overrides the "main" block.
+ * - page.highlighted: Status messages, local tasks and actions.
  * - page.content: The main content of the current page.
  * - page.sidebar: Catalog filters, categories, related content.
  * - page.footer: Footer columns, one per block.
@@ -72,6 +74,12 @@
 
     <main class="site-main container{{ page.sidebar ? ' site-main--with-sidebar' }}" role="main">
       <a id="main-content" tabindex="-1"></a>
+
+      {% if page.page_title %}
+        <div class="site-title">
+          {{ page.page_title }}
+        </div>
+      {% endif %}
 
       {{ page.highlighted }}
 

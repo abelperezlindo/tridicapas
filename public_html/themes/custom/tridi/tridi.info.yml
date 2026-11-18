@@ -13,6 +13,7 @@ regions:
   secondary_menu: 'Secondary menu'
   featured: 'Featured'
   breadcrumb: 'Breadcrumb'
+  page_title: 'Page title'
   highlighted: 'Highlighted'
   content: 'Content'
   sidebar: 'Sidebar'

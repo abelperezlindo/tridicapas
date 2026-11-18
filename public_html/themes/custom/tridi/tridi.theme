@@ -11,7 +11,7 @@ declare(strict_types=1);
  * Implements hook_page_attachments_alter().
  */
 function tridi_page_attachments_alter(array &$attachments): void {
-  // Preconnect a Google Fonts para cargar Plus Jakarta Sans más rápido.
+  // Preconnect to Google Fonts to load Plus Jakarta Sans faster.
   $attachments['#attached']['html_head_link'][] = [
     ['rel' => 'preconnect', 'href' => 'https://fonts.googleapis.com'],
   ];
@@ -24,9 +24,9 @@ function tridi_page_attachments_alter(array &$attachments): void {
  * Implements hook_preprocess_HOOK() for block--system-branding-block.html.twig.
  */
 function tridi_preprocess_block__system_branding_block(array &$variables): void {
-  // Los archivos estáticos se sirven con caché de navegador muy larga, así que
-  // se agrega la fecha de modificación del logo como versión en la URL para
-  // que un logo nuevo se vea sin tener que vaciar la caché del navegador.
+  // Static files are served with a very long browser cache lifetime, so the
+  // logo's modification time is added to the URL as a version, making a new
+  // logo show up without having to clear the browser cache.
   $logo = $variables['site_logo'] ?? '';
   if ($logo === '' || str_contains($logo, '?')) {
     return;
@@ -41,19 +41,19 @@ function tridi_preprocess_block__system_branding_block(array &$variables): void 
  * Implements hook_preprocess_HOOK() for page.html.twig.
  */
 function tridi_preprocess_page(array &$variables): void {
-  // Cuenta de Instagram configurada en Apariencia > tridicapas.
+  // Instagram account configured in Appearance > tridicapas.
   $instagram = trim((string) (theme_get_setting('instagram_user') ?? 'tridicapas'), " @/\t\n\r");
   $variables['instagram_user'] = $instagram;
   $variables['instagram_url'] = $instagram !== '' ? 'https://instagram.com/' . rawurlencode($instagram) : '';
 
-  // Formulario "Contanos tu idea" (webform "contacto") para la portada.
+  // "Contanos tu idea" form (webform "contacto") for the front page.
   if (!empty($variables['is_front'])) {
     $variables['contact_form'] = _tridi_webform_render('contacto');
   }
 }
 
 /**
- * Devuelve el render array de un webform, o un array vacío si no existe.
+ * Returns the render array of a webform, or an empty array if it is missing.
  */
 function _tridi_webform_render(string $webform_id): array {
   $entity_type_manager = \Drupal::entityTypeManager();

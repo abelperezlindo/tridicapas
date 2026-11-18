@@ -1,4 +1,4 @@
-# Tipografía del diseño (Plus Jakarta Sans).
+# Design typeface (Plus Jakarta Sans).
 fonts:
   css:
     base:
@@ -34,7 +34,7 @@ global:
     - core/once
     - tridi/fonts
 
-# Secciones de la portada (se adjunta desde page--front.html.twig).
+# Front page sections (attached from page--front.html.twig).
 front:
   css:
     component:

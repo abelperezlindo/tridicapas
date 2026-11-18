@@ -1,10 +1,10 @@
 /**
  * @file
- * Secciones de la portada: hero, nosotros, contacto, productos, Instagram.
- * Se carga solo en la portada (librería tridi/front).
+ * Front page sections: hero, about, contact, products, Instagram.
+ * Loaded only on the front page (tridi/front library).
  */
 
-/* ---------- Iconos redondos compartidos ---------- */
+/* ---------- Shared round icons ---------- */
 .feature-icon,
 .round-icon {
   display: grid;
@@ -160,7 +160,7 @@
   object-fit: contain;
 }
 
-/* ---------- Nosotros ---------- */
+/* ---------- About ---------- */
 .about {
   padding-block: 60px;
   background: var(--blue);
@@ -249,7 +249,7 @@
   border-radius: 2px;
 }
 
-/* ---------- Contacto ---------- */
+/* ---------- Contact ---------- */
 .contact {
   padding-block: 60px;
   background: var(--cream);
@@ -292,7 +292,7 @@
   color: var(--ink);
 }
 
-/* Webform "contacto" dentro de la tarjeta blanca. */
+/* "contacto" webform inside the white card. */
 .contact-form {
   max-width: none;
 }
@@ -302,7 +302,7 @@
   margin: 0 0 18px;
 }
 
-/* Nombre + Email/WhatsApp en dos columnas (webform_flexbox). */
+/* Name + Email/WhatsApp in two columns (webform_flexbox). */
 .contact-form .webform-flexbox {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -317,7 +317,7 @@
   margin: 0;
 }
 
-/* Campo de imagen con aspecto de zona de arrastre. */
+/* Image field styled as a drop zone. */
 .contact-form .form-managed-file {
   display: grid;
   justify-items: center;
@@ -368,7 +368,7 @@
   cursor: pointer;
 }
 
-/* Archivo ya subido: nombre + botón "Eliminar". */
+/* Already uploaded file: name + "Eliminar" button. */
 .contact-form .form-managed-file .file {
   font-weight: 600;
   color: var(--ink);
@@ -385,7 +385,7 @@
   color: #a7a7ad;
 }
 
-/* Botón "Enviar consulta" a todo el ancho. */
+/* Full-width "Enviar consulta" button. */
 .contact-form .webform-actions {
   margin: 0;
 }
@@ -395,7 +395,7 @@
   padding: 16px;
 }
 
-/* Confirmación inline tras enviar. */
+/* Inline confirmation after submitting. */
 .contact-form .webform-confirmation {
   display: grid;
   gap: 18px;
@@ -427,7 +427,7 @@
   color: #fff;
 }
 
-/* ---------- Productos ---------- */
+/* ---------- Products ---------- */
 .products {
   padding-block: 50px;
   background: var(--mint);

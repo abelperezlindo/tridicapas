@@ -1,6 +1,6 @@
 /**
  * @file
- * Menús: principal (header) y menús en el footer.
+ * Menus: main menu (header) and footer menus.
  */
 
 .menu {
@@ -9,7 +9,7 @@
   list-style: none;
 }
 
-/* ---------- Menú principal (header) ---------- */
+/* ---------- Main menu (header) ---------- */
 .menu--main {
   display: flex;
   align-items: center;
@@ -28,7 +28,7 @@
   color: var(--pink);
 }
 
-/* Submenús: por ahora se muestran solo en móvil (lista anidada). */
+/* Submenus: shown only on mobile for now (nested list). */
 .menu--main .menu .menu {
   display: none;
 }
@@ -52,7 +52,7 @@
   }
 }
 
-/* ---------- Menús dentro del footer ---------- */
+/* ---------- Menus inside the footer ---------- */
 .site-footer .menu__item {
   margin-bottom: 8px;
 }

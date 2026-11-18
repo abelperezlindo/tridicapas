@@ -1,13 +1,13 @@
 /**
  * @file
- * Tridicapas behaviors: menú móvil y zona de arrastre de archivos.
+ * Tridicapas behaviors: mobile menu and file drop zone.
  */
 ((Drupal, once) => {
 
   'use strict';
 
   /**
-   * Abre y cierra el menú en pantallas chicas.
+   * Opens and closes the menu on small screens.
    */
   Drupal.behaviors.tridiNavToggle = {
     attach(context) {
@@ -27,7 +27,7 @@
           setOpen(!nav.classList.contains('is-open'));
         });
 
-        // Al elegir un enlace (p. ej. un ancla de la portada) se cierra el menú.
+        // Choosing a link (e.g. a front page anchor) closes the menu.
         nav.addEventListener('click', (event) => {
           if (event.target.closest('a')) {
             setOpen(false);
@@ -45,10 +45,10 @@
   };
 
   /**
-   * Muestra el nombre del archivo elegido y acepta arrastrar y soltar.
+   * Shows the chosen file name and supports drag and drop.
    *
-   * Uso: <label class="dropzone" for="ID" data-tridi-dropzone> + <input
-   * type="file" id="ID">. El texto se muestra en .dropzone__text.
+   * Usage: <label class="dropzone" for="ID" data-tridi-dropzone> + <input
+   * type="file" id="ID">. The text is shown in .dropzone__text.
    */
   Drupal.behaviors.tridiDropzone = {
     attach(context) {
