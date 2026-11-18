@@ -395,6 +395,11 @@
   padding: 16px;
 }
 
+/* Cloudflare Turnstile widget above the submit button. */
+.contact-form .captcha {
+  margin-bottom: 18px;
+}
+
 /* Inline confirmation after submitting. */
 .contact-form .webform-confirmation {
   display: grid;

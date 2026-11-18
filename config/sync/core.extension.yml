@@ -11,6 +11,7 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
+  captcha: 0
   ckeditor5: 0
   commerce: 0
   commerce_cart: 0
@@ -38,6 +39,7 @@ module:
   help: 0
   image: 0
   inline_entity_form: 0
+  key: 0
   language: 0
   layout_builder: 0
   layout_discovery: 0
@@ -61,6 +63,7 @@ module:
   toolbar: 0
   toolbar_menu: 0
   tridi_core: 0
+  turnstile: 0
   update: 0
   user: 0
   views_ui: 0
